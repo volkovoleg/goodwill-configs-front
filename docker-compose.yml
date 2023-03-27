@@ -4,6 +4,7 @@ services:
   # Первый сервис, nginx
   nginx:
     image: nginx:latest
+    restart: always
     # Пробрасываем порты 80 для http и 443 для https
     ports:
       - "80:80"
@@ -20,6 +21,7 @@ services:
     # Используем ранее собранный образ
     image: volkovoleg/goodwillcatalog
     container_name: catalog
+    restart: always
     # Так же пробрасываем порт на котором висит приложение
     ports:
       - "3333:3333"
@@ -28,6 +30,7 @@ services:
     # Используем ранее собранный образ
     image: volkovoleg/goodwillcrm
     container_name: crm
+    restart: always
     # Так же пробрасываем порт на котором висит приложение
     ports:
       - "3331:3331"
